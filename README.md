@@ -1,4 +1,5 @@
 ```
+
                                           .d888           .d888 
                                          d88P"           d88P"  
                                          888             888    
@@ -13,7 +14,7 @@
      
 ```
 
-`passfzf` is a simple `fzf` wrapper for [`pass`](https://www.passwordstore.org/) (the UNIX password-store). It supports [`pass-tomb`](https://github.com/roddhjav/pass-tomb) but does not require it, and allows fuzzy finding your `pass` passwords to copy them, show them, edit them, delete them, add or generate new passwords, and synchronizing the password store with a remote `git` repository.
+`passfzf` is a simple `fzf` wrapper for [`pass`](https://www.passwordstore.org/) (the UNIX password-store). It supports [`pass-tomb`](https://github.com/roddhjav/pass-tomb) but does not require it, and allows fuzzy finding your `pass` passwords to copy, show, edit, delete, rename and duplicate them. It also supports adding add or generating new passwords, as well as synchronizing the password store with a remote `git` repository.
 
 There are already `pass` extensions doing similar things, but they are not available for all distributions and I prefer using a simple shell script with minimal dependencies that I can easily customize instead of depending on an extension. 
 
