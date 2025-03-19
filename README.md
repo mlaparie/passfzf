@@ -37,7 +37,7 @@ For convenience, I prefer typing my GPG passphrase in a terminal (in this case, 
 default-cache-ttl 60
 
 # Time before the cache is wiped
-maximum-cache-ttl 60
+max-cache-ttl 60
 
 # Allow filling the passphrase directly in terminal instead of GUI
 allow-loopback-pinentry
