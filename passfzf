@@ -54,7 +54,7 @@ main() {
                             --header='
 Ret: copy, C-s: show, C-e: edit, C-r: rename, C-d: duplicate,
 C-a: add, C-g: generate and copy new password, C-t: trash
-C-p: git pull, M-p: git push, C-c/C-q/Esc: clear query or exit' \
+M-<: git pull, M->: git push, C-c/C-q/Esc: clear query or exit' \
                             --margin='1,2,1,2' \
                             --color='16,gutter:-1' \
                             --bind="tab:down" \
@@ -66,8 +66,8 @@ C-p: git pull, M-p: git push, C-c/C-q/Esc: clear query or exit' \
                             --bind="ctrl-a:execute(echo 'add' > /tmp/passfzfarg)+print-query" \
                             --bind="ctrl-g:execute(echo 'generate --clip' > /tmp/passfzfarg)+print-query" \
                             --bind="ctrl-t:execute(echo 'rm' > /tmp/passfzfarg)+accept" \
-                            --bind="ctrl-p:abort+execute(echo 'git pull' > /tmp/passfzfarg)" \
-                            --bind="alt-p:abort+execute(echo 'git push -u --all' > /tmp/passfzfarg)" \
+                            --bind="alt-<:abort+execute(echo 'git pull' > /tmp/passfzfarg)" \
+                            --bind="alt->:abort+execute(echo 'git push -u --all' > /tmp/passfzfarg)" \
                             --bind="ctrl-c:execute(echo 'quit' > /tmp/passfzfarg)+cancel" \
                             --bind="ctrl-q:execute(echo 'quit' > /tmp/passfzfarg)+cancel" \
                             --bind="esc:execute(echo 'quit' > /tmp/passfzfarg)+cancel")
