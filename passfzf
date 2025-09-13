@@ -53,7 +53,8 @@ main() {
                             --cycle \
                             --header='
 Ret: copy, C-s: show, C-e: edit, C-r: rename, C-d: duplicate,
-C-a: add, C-g: generate and copy new password, C-t: trash
+C-a: add, C-g: generate and copy new password, C-t: trash,
+C-o: copy OTP
 M-<: git pull, M->: git push, C-c/C-q/Esc: clear query or exit' \
                             --margin='1,2,1,2' \
                             --color='16,gutter:-1' \
@@ -65,6 +66,7 @@ M-<: git pull, M->: git push, C-c/C-q/Esc: clear query or exit' \
                             --bind="ctrl-d:execute(echo 'cp' > /tmp/passfzfarg)+accept" \
                             --bind="ctrl-a:execute(echo 'add' > /tmp/passfzfarg)+print-query" \
                             --bind="ctrl-g:execute(echo 'generate --clip' > /tmp/passfzfarg)+print-query" \
+                            --bind="ctrl-o:execute(echo 'otp --clip' > /tmp/passfzfarg)+accept" \
                             --bind="ctrl-t:execute(echo 'rm' > /tmp/passfzfarg)+accept" \
                             --bind="alt-<:abort+execute(echo 'git pull' > /tmp/passfzfarg)" \
                             --bind="alt->:abort+execute(echo 'git push -u --all' > /tmp/passfzfarg)" \
