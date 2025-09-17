@@ -52,9 +52,8 @@ main() {
                             --no-multi \
                             --cycle \
                             --header='
-Ret: copy, C-s: show, C-e: edit, C-r: rename, C-d: duplicate,
-C-a: add, C-g: generate and copy new password, C-t: trash,
-C-o: copy OTP
+Ret: copy, C-s: show, C-e: edit, C-r: rename, C-d: duplicate, C-a: add,
+C-g: generate and copy new password, C-t: trash, C-o: copy OTP
 M-<: git pull, M->: git push, C-c/C-q/Esc: clear query or exit' \
                             --margin='1,2,1,2' \
                             --color='16,gutter:-1' \
@@ -117,6 +116,21 @@ M-<: git pull, M->: git push, C-c/C-q/Esc: clear query or exit' \
                     pass ${arg} --in-place "${tmp}" "${REPLY}" \
                         2> /dev/null || pass ${arg} "${tmp}" "${REPLY}"
                     tmp="${selection:=$tmp}"
+                    printf "\nPress any key to continue. "
+                    read -rsn1
+                    continue
+                    ;;
+                "otp --clip")
+                    if ! pass otp 2>&1 | grep -q "Usage: pass otp"; then
+                        echo -e "\033[0;31mError:\033[0m the pass-otp extension not installed."
+                    else
+                        if [[ -n "$selection" ]]; then
+                            tmp=${selection::-4} && tmp=${tmp#"$store"}
+                            pass otp --clip "${tmp}"
+                        else
+                            pass otp --clip
+                        fi
+                    fi
                     printf "\nPress any key to continue. "
                     read -rsn1
                     continue
